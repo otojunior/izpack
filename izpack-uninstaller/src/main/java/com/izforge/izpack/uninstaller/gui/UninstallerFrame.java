@@ -403,6 +403,16 @@ public class UninstallerFrame extends JFrame
         destroyButton.setEnabled(false);
         releaseGUI();
         List<File> failedToDelete = destroyer.getFailedToDelete();
+        
+        /*
+         * Demanda dos PVAs do SPED:
+         * Em Linux, como a chamada do desinstalador é feita diretamente dentro
+         * do diretório do programa, o mesmo não consegue remover por completo, mostrando
+         * uma caixa de diálogo de erro. O código abaixo foi comentado pois tal
+         * caixa de erro pode ser ignorada para este caso específico dos PVAs
+         */
+        
+        /*
         if (!failedToDelete.isEmpty())
         {
             StringBuilder buffer = new StringBuilder();
@@ -428,6 +438,7 @@ public class UninstallerFrame extends JFrame
             panel.add(label, BorderLayout.SOUTH);
             JOptionPane.showMessageDialog(null, panel, "Uninstallation Warning", JOptionPane.WARNING_MESSAGE);
         }
+        */
     }
 
     /**
