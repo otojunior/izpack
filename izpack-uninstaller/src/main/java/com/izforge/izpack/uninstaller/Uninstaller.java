@@ -151,7 +151,13 @@ public class Uninstaller
                 UninstallerContainer container = new GUIUninstallerContainer();
                 try
                 {
-                    boolean displayForceOption = true;
+                	/*
+                	 * Demanda dos PVAs do SPED:
+                	 * Não pode em nenhuma ocasião, aparecer o checkbox de
+                	 * forçar remoção completa devido à pasta do MySQL que
+                	 * deve ser mantida. 
+                	 */
+                    boolean displayForceOption = false;
                     boolean forceOptionState = false;
 
                     for (String arg : args)
