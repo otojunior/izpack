@@ -26,21 +26,20 @@
     <tag>izpack-5.1.2</tag>
   </scm>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <name>Sonatype Nexus snapshot repository</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <!-- We do not deploy directly to the staging repository, but via the Nexus staging plugin -->
-    <!--
-    <repository>
-      <id>sonatype-nexus-staging</id>
-      <name>Sonatype Nexus release repository</name>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-    </repository>
-    -->
-  </distributionManagement>
+	<!--
+		A distribuição (deploy) deve estar configurado para
+		o Nexus corporativo do SERPRO. 
+	 -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus</id>
+			<url>http://nexus.aic.serpro/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<repository>
+			<id>nexus</id>
+			<url>http://nexus.aic.serpro/content/repositories/releases/</url>
+		</repository>
+	</distributionManagement>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
