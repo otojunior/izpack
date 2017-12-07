@@ -218,7 +218,7 @@ public class ShortcutPanel extends IzPanel implements ActionListener, ListSelect
             shortcutPanelLogic.refreshShortcutData();
             allowDesktopShortcut.setVisible(shortcutPanelLogic.hasDesktopShortcuts());
             allowStartupShortcut.setVisible(shortcutPanelLogic.hasStartupShortcuts());
-            usersPanel.setVisible(shortcutPanelLogic.isSupportingMultipleUsers());
+            usersPanel.setVisible(false);
             String suggestedProgramGroup = shortcutPanelLogic.getSuggestedProgramGroup();
             if (suggestedProgramGroup == null || "".equals(suggestedProgramGroup))
             {
@@ -239,6 +239,7 @@ public class ShortcutPanel extends IzPanel implements ActionListener, ListSelect
             {
                 groupList.setSelectedIndex(0);
             }
+            currentUser.doClick();
         }
         catch (Exception e)
         {
